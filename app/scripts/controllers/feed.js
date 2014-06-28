@@ -4,8 +4,8 @@ angular.module('hackfeedApp')
   .controller('FeedCtrl', ['$scope', '$firebase',
     function ($scope, $firebase) {
 
-      var commentsRef = new Firebase("https://wellfed.firebaseio.com/comments");
-      $scope.comments = $firebase(commentsRef);
+    var commentsRef = new Firebase("https://wellfed.firebaseio.com/comments");
+    $scope.posts = $firebase(commentsRef);
 
       $scope.addComment = function () {
         if ($scope.body) {
