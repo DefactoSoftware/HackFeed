@@ -47,7 +47,6 @@
           <div class="comment-new">
             <form ng-submit="addComment(post.$id)">
               <textarea placeholder="Write a comment..." rows="1" ng-model="comments[post.$id]" ng-keydown="enterComment($event, post.$id)" ></textarea>
-              <input type="submit">
             </form>
           </div>
         </div>
