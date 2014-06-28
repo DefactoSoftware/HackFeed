@@ -13,8 +13,7 @@
   // Posts
   .post {
     $post-gutter: 1.4em;
-    $post-image-padding: 0px;
-    $post-image-width: 4em;
+    $post-image-size: 3em;
     $post-color: $base-font-color;
     $post-background: lighten($base-accent-color, 15);
     $post-detail-color: transparentize($post-color, .5);
@@ -36,10 +35,9 @@
       padding-right: $post-gutter;
 
       > img {
-        width: $post-image-width;
-        height: auto;
+        width: $post-image-size;
+        height: $post-image-size;
         border-radius: $base-border-radius;
-        padding: $post-image-padding;
         background: $post-background;
         display: block;
         max-width: none;
