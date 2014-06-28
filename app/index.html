@@ -38,6 +38,7 @@
             <li ng-cloak ng-show-auth="login" ng-controller="LoginController">
                 <a href="#" ng-click="logout()">Log Out</a>
                 <span ng-bind="currentUser.displayName"></span>
+                <img ng-src="{{currentUser.avatarLink}}"/>
             </li>
             <li ng-cloak ng-show-auth="['logout','error']"><a href="#/login">Log In</a>
             </li>

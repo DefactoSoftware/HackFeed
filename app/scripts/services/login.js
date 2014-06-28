@@ -32,6 +32,9 @@ minib.run(function($rootScope, $location, $firebaseSimpleLogin, firebaseRef) {
       auth.$getCurrentUser().then(function (user) {
         if (user) {
           $rootScope.currentUser = user;
+          if (user.provider === 'facebook') {
+            $rootScope.currentUser.avatarLink = 'https://graph.facebook.com/' + user.id + '/picture'
+          }
         } else {
           $location.path('/login');
         }
