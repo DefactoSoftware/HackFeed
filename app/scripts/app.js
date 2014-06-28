@@ -23,7 +23,7 @@ angular.module('hackfeedApp', [
       .when('/feed', {
         authRequired: false, // if true, must log in before viewing this page
         templateUrl: 'views/feed.html',
-        controller: 'LoginController'
+        controller: 'FeedCtrl'
       })
       .otherwise({
         redirectTo: '/'
