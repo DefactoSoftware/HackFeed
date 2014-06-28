@@ -5,6 +5,9 @@
   .write-post {
     padding: 1.5em $content-padding 1.5em;
 
+    textarea {
+      margin-bottom: .2em;
+    }
     input {
       padding: .5em .75em;
     }

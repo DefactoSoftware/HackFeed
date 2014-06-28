@@ -59,6 +59,7 @@ body {
 
     .user {
       float: right;
+      font-size: .8em;
 
       a {
         display: inline-block;
@@ -73,8 +74,8 @@ body {
 
       .avatar {
         display: inline-block;
-        width: 40px;
-        height: 40px;
+        width: 36px;
+        height: 36px;
         margin-left: 5px;
         border-radius: 3px;
         background-color: #ccc;
