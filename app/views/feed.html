@@ -1,4 +1,13 @@
-<section id="feed">
+<div class="header">
+  <ul class="nav nav-pills pull-right">
+    <li ng-cloak ng-show-auth="login" ng-controller="LoginController">
+      <a href="#" ng-click="logout()">Log Out</a>
+    </li>
+    <li ng-cloak ng-show-auth="['logout','error']"><a href="#/login">Log In</a></li>
+  </ul>
+</div>
+
+<section id="feed" ng-controller="FeedCtrl">
 
   <div class="comment question">
     <div class="comment-image">
@@ -42,8 +51,5 @@
       <p class="comment-detail">Date or details about this post</p>
     </div>
   </div>
-
-
-
 
 </section>
