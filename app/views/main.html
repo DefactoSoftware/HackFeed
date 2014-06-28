@@ -15,16 +15,16 @@
 <div id="feed" ng-controller="FeedCtrl">
 
   <div class="write-post">
-    <form ng-submit="addComment()">
-      <textarea ng-model="body" name="body" placeholder="Write something..."></textarea>
-      <input type="submit" value="Share">
-    </form>
+      <form ng-submit="addPost()">
+        <textarea ng-model="body" name="body" placeholder="Write something..."></textarea>
+        <input type="submit" value="Share">
+      </form>
   </div>
 
   <ul>
     <li class="post" ng-repeat="post in posts | orderByPriority">
       <div class="post-image avatar">
-        <img ng-src="//graph.facebook.com/{{comment.uid}}/picture" ng-alt="{{comment.authorName}}">
+        <img ng-src="//graph.facebook.com/{{post.uid}}/picture" ng-alt="{{comment.authorName}}">
       </div>
       <div class="post-content">
         <h1>{{post.authorName}}</h1>
@@ -32,7 +32,7 @@
         <div class="comments">
           <div class="comment-count">{{comment.comments.length}} comments</div>
           <ol>
-            <li nr-repeat="comment in post.comments">
+            <li nr-repeat="comment in post.comments | orderByPriority">
               <img ng-src="//graph.facebook.com/{{comment.uid}}/picture" ng-alt="{{comment.authorName}}">
               <div class="comment-title">{{comment.authorName}}</div>
               <div class="comment-body">{{comment.body}}</div>
@@ -40,7 +40,9 @@
             </li>
           </ol>
           <div class="comment-new">
-            <textarea placeholder="Write a comment..." rows="1"></textarea>
+            <form ng-submit="addComment(post.id)">
+              <textarea placeholder="Write a comment..." rows="1" ng-model="comment-[post:id]" ng-keydown="enterComment($event)"></textarea>
+            </form>
           </div>
         </div>
       </div>
