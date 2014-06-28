@@ -7,6 +7,7 @@ angular.module('hackfeedApp')
 
     var postsRef = new Firebase("https://wellfed.firebaseio.com/posts");
     $scope.posts = $firebase(postsRef);
+    $scope.comments = [];
 
     $scope.addPost = function () {
       if ($scope.body) {
@@ -23,27 +24,27 @@ angular.module('hackfeedApp')
       }
     };
 
-    $scope.enterComment = function (e) {
+    $scope.enterComment = function (e, postId) {
       if (e.keyCode != 13) return;
-      //TODO: addComment();
+
+      $scope.addComment(postId);
     }
 
-    $scope.addComment = function (e) {
-      if (e.srcElement[0].value) {
+    $scope.addComment = function (postId) {
+      if ($scope.comments[postId]) {
 
-        var commentsRef = new Firebase("https://wellfed.firebaseio.com/posts/" + e.srcElement[1].value + "/comments");
+        var commentsRef = new Firebase("https://wellfed.firebaseio.com/posts/" + postId + "/comments");
         var comments = $firebase(commentsRef);
 
         comments.$add({
-          "body": e.srcElement[0].value,
+          "body": $scope.comments[postId],
           "uid": $scope.currentUser.id,
           "authorName": $scope.currentUser.displayName,
           "createdAt": new Date()
         });
-        $scope.comment = "";
+        $scope.comments[postId] = "";
       }
     };
-
 
   }
 ]);
