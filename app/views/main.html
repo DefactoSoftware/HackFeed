@@ -6,8 +6,8 @@
 
 
   <div class="post comment question">
-    <div class="comment-image">
-      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt="">
+    <div class="comment-image avatar">
+      <img ng-src="{{currentUser.avatarLink}}" alt="" class="avatar">
     </div>
     <div class="post-content">
       <h1>Add comment</h1>
@@ -20,11 +20,11 @@
 
   <ul>
     <li class="post" ng-repeat="comment in comments">
-      <div class="post-image">
-        <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt="">
+      <div class="post-image avatar">
+        <img ng-src="//graph.facebook.com/{{comment.uid}}/picture" alt="">
       </div>
       <div class="post-content">
-        <h1>Titel: {{comment.author}}</h1>
+        <h1>{{comment.authorName}}</h1>
         <p>{{comment.body}}</p>
         <div class="comments">
           <div class="comment-count">3 comments</div>
