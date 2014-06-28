@@ -1,13 +1,13 @@
 'use strict';
 
 angular.module('hackfeedApp')
-  .controller('LoginController', function($scope, simpleLogin, $location) {
+  .controller('LoginController', function($rootScope, $scope, simpleLogin, $location) {
     $scope.pass = null;
     $scope.err = null;
     $scope.email = null;
     $scope.confirm = null;
     $scope.createMode = false;
-    $scope.user = null;
+    $scope.user = $rootScope.currentUser;
 
     $scope.login = function(service) {
       simpleLogin.login(service, function(err) {
