@@ -13,7 +13,7 @@
   // Posts
   .post {
     $post-gutter: 1.4em;
-    $post-image-padding: .7em;
+    $post-image-padding: 0px;
     $post-image-width: 4em;
     $post-color: $base-font-color;
     $post-background: lighten($base-accent-color, 15);
