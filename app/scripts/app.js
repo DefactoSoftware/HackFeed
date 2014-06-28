@@ -13,8 +13,7 @@ angular.module('hackfeedApp', [
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        templateUrl: 'views/main.html'
       })
       .when('/login', {
         authRequired: false, // if true, must log in before viewing this page
