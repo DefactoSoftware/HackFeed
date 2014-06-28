@@ -1,0 +1,14 @@
+.jumbo {
+  @include span-columns(4);
+  height: 100vh;
+  padding: 21px;
+  background-color: rgb(65, 46, 168);
+  color: #fff;
+  box-shadow: 2px 0px 23px 0px rgba(50, 50, 50, 0.75);
+}
+
+.login {
+  @include span-columns(8);
+  padding: 21px 28px 21px 0;
+  min-height: 100vh;
+}
