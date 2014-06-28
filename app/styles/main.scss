@@ -47,11 +47,40 @@ body {
     right: 0;
     left: $sidebar-width;
     height: $header-height;
-    padding: 10px $content-padding 0;
+    padding: 10px 10px 0 $content-padding;
     background: rgba(#f5f5f5, .9);
     border-bottom: 1px solid rgba(#000, 0.1);
     color: #666;
-    font-weight: 300;
+
+    h3 {
+      float: left;
+      font-weight: 300;
+    }
+
+    .user {
+      float: right;
+
+      a {
+        display: inline-block;
+        margin-right: 5px;
+        padding: 4px 6px;
+        background: #ddd;
+        color: #666;
+        font-size: .7em;
+        text-transform: uppercase;
+        border-radius: 3px;
+      }
+
+      .avatar {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        margin-left: 5px;
+        border-radius: 3px;
+        background-color: #ccc;
+        vertical-align: middle;
+      }
+    }
   }
 }
 

@@ -1,5 +1,15 @@
 <header id="container-header">
   <h3>Feed</h3>
+  <div class="user">
+    <div ng-cloak ng-show-auth="login" ng-controller="LoginController">
+      <a href="#" ng-click="logout()">Log Out</a>
+      <span ng-bind="currentUser.displayName"></span>
+      <img ng-src="{{currentUser.avatarLink}}" class="avatar">
+    </div>
+    <div ng-cloak ng-show-auth="['logout','error']">
+      <a href="#/login">Log In</a>
+    </div>
+  </div>
 </header>
 
 <div id="feed" ng-controller="FeedCtrl">
