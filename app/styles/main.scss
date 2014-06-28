@@ -1,3 +1,7 @@
+// In `app/styles/main.scss`
+@import 'bourbon';
+@import 'neat';
+
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;
