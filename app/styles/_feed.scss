@@ -83,13 +83,17 @@
         padding: 10px 0 10px 50px;
         border-top: 1px solid rgba(#000, 0.1);
 
-        .comment-avatar {
+        .comment-image {
           position: absolute;
           margin-top: 4px;
           left: 0;
-          width: 36px;
-          height: 36px;
-          border-radius: $base-border-radius;
+
+          img {
+            width: 36px;
+            height: 36px;
+            border-radius: $base-border-radius;
+            background: lighten($base-accent-color, 15);
+          }
         }
         .comment-title {
           margin-bottom: 4px;
