@@ -7,7 +7,7 @@ angular.module('hackfeedApp')
     $scope.email = null;
     $scope.confirm = null;
     $scope.createMode = false;
-    $scope.user = $rootScope.currentUser;
+    $scope.user = null;
 
     $scope.login = function(service) {
       simpleLogin.login(service, function(err) {

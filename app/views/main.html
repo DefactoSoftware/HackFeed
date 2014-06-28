@@ -19,7 +19,7 @@
   </div>
 
   <ul>
-    <li class="post" ng-repeat="comment in comments">
+    <li class="post" ng-repeat="comment in comments | orderByPriority">
       <div class="post-image avatar">
         <img ng-src="//graph.facebook.com/{{comment.uid}}/picture" alt="">
       </div>
@@ -51,6 +51,5 @@
         </div>
       </div>
     </li>
-
   </ul>
 </div>
