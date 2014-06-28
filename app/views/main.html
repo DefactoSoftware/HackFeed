@@ -24,7 +24,7 @@
   <ul>
     <li class="post" ng-repeat="post in posts | orderByPriority">
 
-      <div class="post-image avatar">
+      <div class="post-image">
         <img ng-src="//graph.facebook.com/{{post.uid}}/picture" ng-alt="{{post.authorName}}">
       </div>
 
@@ -35,7 +35,7 @@
           <div class="comment-count">{{post.comments.length}} comments</div>
           <ol>
             <li ng-repeat="comment in post.comments | orderByPriority">
-              <div class="post-image">
+              <div class="comment-image">
                 <img ng-src="//graph.facebook.com/{{comment.uid}}/picture" ng-alt="{{comment.authorName}}">
               </div>
               <div class="comment-title">{{comment.authorName}}</div>
