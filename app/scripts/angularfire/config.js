@@ -11,7 +11,7 @@ angular.module('hackfeedApp')
   .constant('loginRedirectPath', '/login')
 
   // which login service we're using
-  .constant('loginProviders', '')
+  .constant('loginProviders', 'facebook,password')
 
   // your Firebase URL goes here
   .constant('FBURL', 'https://wellfed.firebaseio.com');
