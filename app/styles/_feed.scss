@@ -32,10 +32,10 @@
     .post-content {
       display: table-cell;
       vertical-align: $post-image-vert-alignment;
-      margin-right: 1em;
     }
 
     .post-image {
+      padding-right: $post-gutter;
       float: left;
 
       > img {
@@ -81,7 +81,7 @@
     ol {
       li {
         position: relative;
-        padding: 10px 0 10px 0px;
+        padding: 10px 0 10px 50px;
         border-top: 1px solid rgba(#000, 0.1);
 
         .comment-image {
@@ -93,7 +93,7 @@
           img {
             width: 36px;
             height: 36px;
-            border-radius: $base-border-radius;
+            border-radius: 50%;
             background: lighten($base-accent-color, 15);
           }
           width: 36px;
