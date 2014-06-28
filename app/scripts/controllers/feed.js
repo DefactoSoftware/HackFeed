@@ -9,6 +9,14 @@ angular.module('hackfeedApp')
     ];
 
     var commentsRef = new Firebase("https://wellfed.firebaseio.com/comments");
-    $scope.people = $firebase(commentsRef);
+    $scope.comments = $firebase(commentsRef);
+
+    $scope.addComment = function() {
+      console.log($scope);
+
+      if ($scope.body) {
+        $scope.comments.$add({"body": $scope.body});
+      }
+    }
 
   }]);

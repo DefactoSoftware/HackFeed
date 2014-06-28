@@ -6,8 +6,8 @@
     </div>
     <div class="comment-content">
       <h1>Add comment</h1>
-      <form>
-        <textarea></textarea>
+      <form ng-submit="addComment()">
+        <textarea ng-model="body" name="body"></textarea>
         <p><input class="button" type="submit" value="Submit"></p>
       </form>
     </div>
