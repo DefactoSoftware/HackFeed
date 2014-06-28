@@ -22,7 +22,7 @@
   </div>
 
   <ul>
-    <li class="post" ng-repeat="post in posts | orderByPriority">
+    <li class="post" ng-repeat="(id, post) in posts | orderByPriority">
 
       <div class="post-image avatar">
         <img ng-src="//graph.facebook.com/{{post.uid}}/picture" ng-alt="{{post.authorName}}">
@@ -43,8 +43,10 @@
           </ol>
 
           <div class="comment-new">
-            <form ng-submit="addComment(post.id)">
-              <textarea placeholder="Write a comment..." rows="1" ng-model="comment-{{post.id}}" ng-keydown="enterComment($event)"></textarea>
+            <form ng-submit="addComment($event)">
+              <textarea placeholder="Write a comment..." rows="1" ng-model="comment" ng-keydown="enterComment($event)"></textarea>
+              <input type="hidden" value="{{post.$id}}" name="postid">
+              <input type="submit">
             </form>
           </div>
         </div>

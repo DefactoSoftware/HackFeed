@@ -5,8 +5,8 @@ angular.module('hackfeedApp')
 .controller('FeedCtrl', ['$scope', '$firebase',
   function ($scope, $firebase) {
 
-    var commentsRef = new Firebase("https://wellfed.firebaseio.com/comments");
-    $scope.posts = $firebase(commentsRef);
+    var postsRef = new Firebase("https://wellfed.firebaseio.com/posts");
+    $scope.posts = $firebase(postsRef);
 
     $scope.addPost = function () {
       if ($scope.body) {
@@ -28,19 +28,19 @@ angular.module('hackfeedApp')
       //TODO: addComment();
     }
 
-    $scope.addComment = function (postId) {
-      if ($scope['comment-' + postId]) {
+    $scope.addComment = function (e) {
+      if (e.srcElement[0].value) {
 
-        var postRef = new Firebase("https://wellfed.firebaseio.com/comments/" + postId + "/comments");
-        var comments = $firebase(postRef);
+        var commentsRef = new Firebase("https://wellfed.firebaseio.com/posts/" + e.srcElement[1].value + "/comments");
+        var comments = $firebase(commentsRef);
 
         comments.$add({
-          "body": $scope.comment,
+          "body": e.srcElement[0].value,
           "uid": $scope.currentUser.id,
           "authorName": $scope.currentUser.displayName,
           "createdAt": new Date()
         });
-        $scope['comment-' + postId] = "";
+        $scope.comment = "";
       }
     };
 
