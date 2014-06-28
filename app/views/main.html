@@ -35,7 +35,9 @@
           <div class="comment-count">{{post.comments.length}} comments</div>
           <ol>
             <li ng-repeat="comment in post.comments | orderByPriority">
-              <img ng-src="//graph.facebook.com/{{comment.uid}}/picture" ng-alt="{{comment.authorName}}">
+              <div class="post-image">
+                <img ng-src="//graph.facebook.com/{{comment.uid}}/picture" ng-alt="{{comment.authorName}}">
+              </div>
               <div class="comment-title">{{comment.authorName}}</div>
               <div class="comment-body">{{comment.body}}</div>
               <div class="comment-meta">{{comment.createdAt}}</div>
