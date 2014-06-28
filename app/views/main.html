@@ -4,24 +4,17 @@
 
 <div id="feed" ng-controller="FeedCtrl">
 
-
-  <div class="post comment question">
-    <div class="comment-image avatar">
-      <img ng-src="{{currentUser.avatarLink}}" alt="" class="avatar">
-    </div>
-    <div class="post-content">
-      <h1>Add comment</h1>
-      <form ng-submit="addComment()">
-        <textarea ng-model="body" name="body"></textarea>
-        <p><input class="button" type="submit" value="Submit"></p>
-      </form>
-    </div>
+  <div class="write-post">
+    <form ng-submit="addComment()">
+      <textarea ng-model="body" name="body" placeholder="Write something..."></textarea>
+      <input class="button" type="submit" value="Post">
+    </form>
   </div>
 
   <ul>
     <li class="post" ng-repeat="comment in comments | orderByPriority">
       <div class="post-image avatar">
-        <img ng-src="//graph.facebook.com/{{comment.uid}}/picture" alt="">
+        <img ng-src="//graph.facebook.com/{{comment.uid}}/picture" alt="{{comment.authorName}}">
       </div>
       <div class="post-content">
         <h1>{{comment.authorName}}</h1>
@@ -48,8 +41,12 @@
               <div class="comment-meta">47 minutes ago</div>
             </li>
           </ol>
+          <div class="comment-new">
+            <textarea placeholder="Write a comment..." rows="1"></textarea>
+          </div>
         </div>
       </div>
     </li>
   </ul>
+
 </div>

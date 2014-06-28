@@ -1,6 +1,15 @@
 #feed {
   margin: 0 -$content-padding;
 
+  // Write post
+  .write-post {
+    padding: 1.5em $content-padding 1.5em;
+
+    input {
+      padding: .5em .75em;
+    }
+  }
+
   // Posts
   .post {
     $post-gutter: 1.4em;
@@ -15,7 +24,7 @@
     width: 100%;
     padding: 2.5em $content-padding 1.5em;
     border-bottom: 1px solid transparentize($post-color, .9);
-    box-shadow: inset 0 10px 20px -10px rgba(#000, 0.1);
+    box-shadow: inset 0 20px 30px -10px rgba(#333, 0.1);
 
     .post-image,
     .post-content {
@@ -34,11 +43,6 @@
         background: $post-background;
         display: block;
         max-width: none;
-      }
-
-      .post-reverse-order & {
-        padding-right: 0;
-        padding-left: 10px;
       }
     }
 
@@ -84,7 +88,6 @@
           left: 0;
           width: 36px;
           height: 36px;
-          // border-radius: 50%;
           border-radius: $base-border-radius;
         }
         .comment-title {
@@ -99,6 +102,14 @@
           color: #ccc;
           font-size: .9em;
         }
+      }
+    }
+
+    .comment-new {
+      margin-top: 5px;
+
+      textarea {
+        padding: 10px;
       }
     }
   }
