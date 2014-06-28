@@ -1,4 +1,5 @@
 'use strict';
+
 angular.module('angularfire.login', ['firebase', 'angularfire.firebase'])
 
 .run(function (simpleLogin) {
@@ -16,16 +17,6 @@ angular.module('angularfire.login', ['firebase', 'angularfire.firebase'])
   return {
     init: function () {
       auth = $firebaseSimpleLogin(firebaseRef());
-      auth.$getCurrentUser().then(function (user) {
-        if (user) {
-          $rootScope.currentUser = user;
-          if (user.provider === 'facebook') {
-            $rootScope.currentUser.avatarLink = '//graph.facebook.com/' + user.id + '/picture'
-          }
-        } else {
-          $location.path('/login');
-        }
-      });
       return auth;
     },
 

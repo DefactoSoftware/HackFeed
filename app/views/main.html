@@ -14,7 +14,7 @@
 
 <div id="feed" ng-controller="FeedCtrl">
 
-  <div class="write-post">
+  <div class="write-post" ng-show="currentUser.id">
       <form ng-submit="addPost()">
         <textarea ng-model="body" name="body" placeholder="Write something..."></textarea>
         <input type="submit" value="Share">
@@ -44,7 +44,7 @@
             </li>
           </ol>
 
-          <div class="comment-new">
+          <div class="comment-new" ng-show="currentUser.id">
             <form ng-submit="addComment(post.$id)">
               <textarea placeholder="Write a comment..." rows="1" ng-model="comments[post.$id]" ng-keydown="enterComment($event, post.$id)" ></textarea>
             </form>
