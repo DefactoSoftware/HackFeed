@@ -4,16 +4,18 @@
 @import 'neat';
 @import 'feed';
 
-$sidebar-width: 35%;
-$padding: 40px;
+body {
+  margin: 0;
+}
 
 #sidebar {
+  z-index: 100;
   position: fixed;
   top: 0;
   left: 0;
   width: $sidebar-width;
   height: 100%;
-  padding: $padding;
+  padding: $content-padding;
   background: #ededed;
   background: #82a7db;
   color: #fff;
@@ -35,71 +37,23 @@ $padding: 40px;
   position: relative;
   width: 100% - $sidebar-width;
   left: $sidebar-width;
-  padding: $padding;
-}
+  padding: $content-padding;
+  padding-top: $header-height + $content-padding;
 
-
-.comment {
-  $comment-gutter: 1.4em;
-  $comment-image-padding: .7em;
-  $comment-image-width: 4em;
-  $comment-color: $base-font-color;
-  $comment-background: lighten($base-accent-color, 15);
-  $comment-detail-color: transparentize($comment-color, .5);
-  $comment-image-vert-alignment: top;
-
-  display: table;
-  width: 100%;
-  margin-bottom: $base-line-height;
-  padding-bottom: 1em;
-  border-bottom: 1px solid transparentize($comment-color, .9);
-
-  .comment-image,
-  .comment-content {
-    display: table-cell;
-    vertical-align: $comment-image-vert-alignment;
-  }
-
-  .comment-image {
-    padding-right: $comment-gutter;
-
-    > img {
-      width: $comment-image-width;
-      height: auto;
-      border-radius: $base-border-radius;
-      padding: $comment-image-padding;
-      background: $comment-background;
-      display: block;
-      max-width: none;
-    }
-
-    .comment-reverse-order & {
-      padding-right: 0;
-      padding-left: 10px;
-    }
-  }
-
-  .comment-content {
-    width: 100%;
-
-    h1 {
-      font-size: 1em;
-      margin-bottom: .5em;
-    }
-
-    p {
-      margin-bottom: .5em;
-    }
-
-    p.comment-detail {
-      font-style: italic;
-      font-size: .9em;
-      color: $comment-detail-color;
-    }
+  #container-header {
+    z-index: 50;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: $sidebar-width;
+    height: $header-height;
+    padding: 10px $content-padding 0;
+    background: rgba(#f5f5f5, .9);
+    border-bottom: 1px solid rgba(#000, 0.1);
+    color: #666;
+    font-weight: 300;
   }
 }
-
-
 
 
 /* Responsive: Portrait tablets and up */

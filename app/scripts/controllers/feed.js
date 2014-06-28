@@ -16,6 +16,7 @@ angular.module('hackfeedApp')
 
       if ($scope.body) {
         $scope.comments.$add({"body": $scope.body});
+        $scope.body = "";
       }
     }
 
