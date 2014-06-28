@@ -2,6 +2,7 @@
 @import 'bourbon';
 @import 'base/base';
 @import 'neat';
+@import 'feed';
 
 $sidebar-width: 35%;
 $padding: 40px;
@@ -105,6 +106,3 @@ $padding: 40px;
 @media screen and (min-width: 768px) {
 
 }
-
-
-@import 'feed';
