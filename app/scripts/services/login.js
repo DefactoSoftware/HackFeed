@@ -4,20 +4,7 @@ angular.module('angularfire.login', ['firebase', 'angularfire.firebase'])
 .run(function (simpleLogin) {
   simpleLogin.init();
 })
-/*
-var minib = angular.module('minib', ['ngRoute', 'firebase']);
 
-minib.run(function($rootScope, $location, $firebaseSimpleLogin, firebaseRef) {
-  $rootScope.auth = $firebaseSimpleLogin(firebaseRef());
-  $rootScope.auth.$getCurrentUser().then(function(user) {
-    if (user) {
-      $rootScope.currentUser = user;
-    } else {
-      $location.path('/login');
-    }
-  });
-});
-*/
 .factory('simpleLogin', function ($rootScope, $firebaseSimpleLogin, firebaseRef, profileCreator, $timeout, $location) {
   function assertAuth() {
     if (auth === null) {
@@ -33,7 +20,7 @@ minib.run(function($rootScope, $location, $firebaseSimpleLogin, firebaseRef) {
         if (user) {
           $rootScope.currentUser = user;
           if (user.provider === 'facebook') {
-            $rootScope.currentUser.avatarLink = 'https://graph.facebook.com/' + user.id + '/picture'
+            $rootScope.currentUser.avatarLink = '//graph.facebook.com/' + user.id + '/picture'
           }
         } else {
           $location.path('/login');
@@ -45,6 +32,7 @@ minib.run(function($rootScope, $location, $firebaseSimpleLogin, firebaseRef) {
     logout: function () {
       assertAuth();
       auth.$logout();
+      $location.path('/');
     },
 
     /**
