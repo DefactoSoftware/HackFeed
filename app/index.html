@@ -29,20 +29,11 @@
 
     <!-- Add your site or application content here -->
     <section id="sidebar">
-        <header>
-            <h1>Well Fed</h1>
-            <h2>Together.</h2>
-            <p>Lets start feeding ...</p>
-        </header>
-        <ul class="nav nav-pills pull-right">
-            <li ng-cloak ng-show-auth="login" ng-controller="LoginController">
-                <a href="#" ng-click="logout()">Log Out</a>
-                <span ng-bind="currentUser.displayName"></span>
-                <img ng-src="{{currentUser.avatarLink}}" class="avatar" />
-            </li>
-            <li ng-cloak ng-show-auth="['logout','error']"><a href="#/login">Log In</a>
-            </li>
-        </ul>
+      <header>
+        <h1>Well Fed</h1>
+        <h2>Together.</h2>
+        <p>Lets start feeding ...</p>
+      </header>
     </section>
 
     <div id="container" ng-view=""></div>
