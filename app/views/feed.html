@@ -1,12 +1,3 @@
-<div class="header">
-  <ul class="nav nav-pills pull-right">
-    <li ng-cloak ng-show-auth="login" ng-controller="LoginController">
-      <a href="#" ng-click="logout()">Log Out</a>
-    </li>
-    <li ng-cloak ng-show-auth="['logout','error']"><a href="#/login">Log In</a></li>
-  </ul>
-</div>
-
 <section id="feed" ng-controller="FeedCtrl">
 
   <div class="comment question">
@@ -22,48 +13,16 @@
     </div>
   </div>
 
-
-  <div class="comment question">
-    <div class="comment-image">
-      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt="">
-    </div>
-    <div class="comment-content">
-      <h1>Jurre asked a question</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, aspernatur, quia modi minima debitis tempora ducimus quam vero impedit alias earum nemo error tenetur sed.</p>
-      <p class="comment-detail">Date or details about this post | <a href="#">Add comment</a></p>
-    </div>
-  </div>
-
-  <div class="comment announcement">
-    <div class="comment-image">
-      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_2.png" alt="">
-    </div>
-    <div class="comment-content">
-      <h1>Maarten Jacobs posted an announcement</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, aspernatur, quia modi minima debitis tempora ducimus quam vero impedit alias earum nemo error tenetur sed.</p>
-      <p class="comment-detail">Date or details about this post</p>
-    </div>
-  </div>
-
-  <div class="comment results">
-    <div class="comment-image">
-      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_2.png" alt="">
-    </div>
-    <div class="comment-content">
-      <h1>Rating of hoorcollege epidemiologie</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, aspernatur, quia modi minima debitis tempora ducimus quam vero impedit alias earum nemo error tenetur sed.</p>
-      <p class="comment-detail">Date or details about this post</p>
-    </div>
-  </div>
-
-  <div class="comment checkin">
-    <div class="comment-image">
-      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_2.png" alt="">
-    </div>
-    <div class="comment-content">
-      <h1>11 people attended hoorcollege epidemiologie</h1>
-      <p class="comment-detail">Date or details about this post</p>
-    </div>
-  </div>
-
+  <ul ng-repeat="comment in comments">
+    <li class="comment question">
+      <div class="comment-image">
+        <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt="">
+      </div>
+      <div class="comment-content">
+        <h1>{{comment.author}}</h1>
+        <p>{{comment.body}}</p>
+        <p class="comment-detail">{{comment.date}}| <a href="#">Add comment</a></p>
+      </div>
+    </li>
+  </ul>
 </section>
