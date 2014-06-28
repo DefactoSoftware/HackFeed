@@ -1,7 +1,10 @@
 <!-- wait for auth to resolve (avoid flashing login page before redirect -->
-<div ng-cloak class="row">
-    <div class="col-md-12">
-
+<div ng-cloak>
+    <div class="jumbo">
+        <h1>Learn better</h1>
+        <h2>Together.</h2>
+    </div>
+    <div class="login">
         <!-- examples for fun and profit -->
         <!--<div ng-show-auth="login">{{auth.user|json}}</div>-->
         <!--<div ng-show-auth="error,logout">Logged out</div>-->
@@ -13,15 +16,15 @@
             </p>
         </fieldset>
 
-        
+
         <p>&nbsp;</p>
         <form role="form">
             <fielset>
                 <legend>Email/Password</legend>
 
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
+                <div>
+                    <div>
+                        <div>
                             <label>email</label>
                             <input class="form-control" type="text" ng-model="email" />
                         </div>
@@ -44,10 +47,10 @@
                 </div>
             </fielset>
         </form>
-        
+
 
         <br />
         <div ng-show="err" class="alert alert-danger"><strong>{{err}}</strong></div>
-
+      </div>
     </div>
 </div>
