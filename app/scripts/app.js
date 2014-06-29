@@ -5,6 +5,7 @@ angular.module('hackfeedApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
+  'ngAnimate',
   'firebase',
   'angularfire.firebase',
   'angularfire.login',
