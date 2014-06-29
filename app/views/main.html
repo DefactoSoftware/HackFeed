@@ -1,32 +1,33 @@
-<header id="container-header">
-  <h3>Feed</h3>
-  <div class="user">
-    <div ng-cloak ng-show-auth="login" ng-controller="LoginController">
-      <a href="#" ng-click="logout()">Log Out</a>
-      <span ng-bind="currentUser.displayName"></span>
-      <img ng-src="{{currentUser.avatarLink}}" class="avatar">
-    </div>
-    <div ng-cloak ng-show-auth="['logout','error']">
-      <a href="#/login">Log In</a>
-    </div>
-  </div>
-</header>
-
-<div id="feed" ng-controller="FeedCtrl">
-
-  <div class="write-post" ng-show="currentUser.id">
-      <form ng-submit="addPost()">
-        <textarea ng-model="body" name="body" placeholder="Write something..."></textarea>
-        <input type="submit" value="Share">
-      </form>
-  </div>
-
-  <ul>
-    <li class="post" ng-repeat="post in posts | orderByPriority">
-
-      <div class="post-image">
-        <img ng-src="//graph.facebook.com/{{post.uid}}/picture" ng-alt="{{post.authorName}}">
+<div id="container">
+  <header id="container-header">
+    <h3>Feed</h3>
+    <div class="user">
+      <div ng-cloak ng-show-auth="login" ng-controller="LoginController">
+        <a href="#" ng-click="logout()">Log Out</a>
+        <span ng-bind="currentUser.displayName"></span>
+        <img ng-src="{{currentUser.avatarLink}}" class="avatar">
       </div>
+      <div ng-cloak ng-show-auth="['logout','error']">
+        <a href="#/login">Log In</a>
+      </div>
+    </div>
+  </header>
+
+  <div id="feed" ng-controller="FeedCtrl">
+
+    <div class="write-post" ng-show="currentUser.id">
+        <form ng-submit="addPost()">
+          <textarea ng-model="body" name="body" placeholder="Write something..."></textarea>
+          <input type="submit" value="Share">
+        </form>
+    </div>
+
+    <ul>
+      <li class="post" ng-repeat="post in posts | orderByPriority">
+
+        <div class="post-image">
+          <img ng-src="//graph.facebook.com/{{post.uid}}/picture" ng-alt="{{post.authorName}}">
+        </div>
 
       <div class="post-content">
         <h1>{{post.authorName}}</h1>
@@ -40,7 +41,7 @@
               </div>
               <div class="comment-title">{{comment.authorName}}</div>
               <div class="comment-body">{{comment.body}}</div>
-              <a ng-href="{{comment.url}}">download me </a>
+              <a ng-href="{{comment.url}}" ng-show="">download me </a>
               <div class="comment-meta">{{comment.createdAt}}</div>
             </li>
           </ol>
@@ -50,11 +51,12 @@
               <textarea placeholder="Write a comment..." rows="1" ng-model="comments[post.$id]" ng-keydown="enterComment($event, post.$id)" ></textarea>
             </form>
               <button ng-click="filePick($event, post.$id)">Upload a file</button>
+            </div>
           </div>
         </div>
-      </div>
 
-    </li>
-  </ul>
+      </li>
+    </ul>
 
+  </div>
 </div>
