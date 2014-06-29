@@ -134,6 +134,17 @@ body {
     width: 50px;
 }
 
+.blur {
+  min-height: 100vh;
+  background-image: url(../images/blur.png);
+  background-size: cover;
+  color: #fff;
+  fieldset {
+    background: none!important;
+    border: 0px;
+  }
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
 
