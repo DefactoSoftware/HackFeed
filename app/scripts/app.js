@@ -29,4 +29,7 @@ angular.module('hackfeedApp', [
       .otherwise({
         redirectTo: '/feed'
       });
+  })
+  .run(function () {
+    filepicker.setKey('Ak7NhBcYQjaVUInY0IraQz');
   });

@@ -30,6 +30,12 @@ angular.module('hackfeedApp')
       $scope.addComment(postId);
     }
 
+    $scope.filePick = function (e, postId) {
+      filepicker.pick(function (file) {
+        $scope.addUpload(postId, file.url, file.url);
+      });
+    }
+
     $scope.addComment = function (postId) {
       if ($scope.comments[postId]) {
 
@@ -46,5 +52,17 @@ angular.module('hackfeedApp')
       }
     };
 
+    $scope.addUpload = function (postId, body, url) {
+        var commentsRef = new Firebase("https://wellfed.firebaseio.com/posts/" + postId + "/comments");
+        var comments = $firebase(commentsRef);
+
+        comments.$add({
+          "body": body,
+          "uid": $scope.currentUser.id,
+          "authorName": $scope.currentUser.displayName,
+          "createdAt": new Date(),
+          "url": url
+        });
+    };
   }
 ]);

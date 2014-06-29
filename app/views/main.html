@@ -40,6 +40,7 @@
               </div>
               <div class="comment-title">{{comment.authorName}}</div>
               <div class="comment-body">{{comment.body}}</div>
+              <a ng-href="{{comment.url}}">download me </a>
               <div class="comment-meta">{{comment.createdAt}}</div>
             </li>
           </ol>
@@ -48,6 +49,7 @@
             <form ng-submit="addComment(post.$id)">
               <textarea placeholder="Write a comment..." rows="1" ng-model="comments[post.$id]" ng-keydown="enterComment($event, post.$id)" ></textarea>
             </form>
+              <button ng-click="filePick($event, post.$id)">Upload a file</button>
           </div>
         </div>
       </div>
