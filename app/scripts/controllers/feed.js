@@ -2,8 +2,8 @@
 
 angular.module('hackfeedApp')
 
-.controller('FeedCtrl', ['$scope', '$rootScope', '$firebase',
-  function ($scope, $rootScope, $firebase) {
+.controller('FeedCtrl', ['$scope', '$rootScope', '$firebase', '$animate',
+  function ($scope, $rootScope, $firebase, $animate) {
 
     var postsRef = new Firebase("https://wellfed.firebaseio.com/posts");
     $scope.posts = $firebase(postsRef);
