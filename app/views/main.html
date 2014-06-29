@@ -41,7 +41,7 @@
               </div>
               <div class="comment-title">{{comment.authorName}}</div>
               <div class="comment-body">{{comment.body}}</div>
-              <a ng-href="{{comment.url}}" ng-show="">download me </a>
+              <a ng-href="{{comment.url}}" ng-show="comment.url">download</a>
               <div class="comment-meta">{{comment.createdAt}}</div>
             </li>
           </ol>

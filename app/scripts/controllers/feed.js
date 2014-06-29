@@ -32,7 +32,7 @@ angular.module('hackfeedApp')
 
     $scope.filePick = function (e, postId) {
       filepicker.pick(function (file) {
-        $scope.addUpload(postId, file.url, file.url);
+        $scope.addUpload(postId, file.filename, file.url);
       });
     }
 
