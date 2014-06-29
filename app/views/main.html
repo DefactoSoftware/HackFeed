@@ -23,7 +23,7 @@
     </div>
 
     <ul>
-      <li class="post" ng-repeat="post in posts | orderByPriority">
+      <li class="post" ng-repeat="post in posts | orderByPriority" ng-class="{{post.type}}">
 
         <div class="post-image">
           <img ng-src="//graph.facebook.com/{{post.uid}}/picture" ng-alt="{{post.authorName}}">
