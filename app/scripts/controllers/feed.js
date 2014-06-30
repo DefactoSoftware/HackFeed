@@ -18,7 +18,8 @@ angular.module('hackfeedApp')
           "uid": $scope.currentUser.id,
           "authorName": $scope.currentUser.displayName,
           "createdAt": new Date(),
-          $priority: -keys.length
+          $priority: -keys.length,
+          "type": "user-post"
         });
         $scope.body = "";
       }
@@ -46,7 +47,8 @@ angular.module('hackfeedApp')
           "body": $scope.comments[postId],
           "uid": $scope.currentUser.id,
           "authorName": $scope.currentUser.displayName,
-          "createdAt": new Date()
+          "createdAt": new Date(),
+          "type": "user-post"
         });
         $scope.comments[postId] = "";
       }
